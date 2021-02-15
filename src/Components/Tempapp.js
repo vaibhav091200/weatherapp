@@ -29,7 +29,7 @@ const Tempapp = () => {
 
   useEffect(() => {
     const fetchApi = async () => {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fbcd14697856476288cce483ecbba02f`;
+      const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fbcd14697856476288cce483ecbba02f`;
       const response = await fetch(url);
       //   console.log(response);
       const resJson = await response.json();
