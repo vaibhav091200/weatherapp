@@ -22,7 +22,7 @@ const Tempapp = () => {
         <div className="inputData">
           <input
             type="search"
-            placeholder="Enter city name"
+            placeholder="Enter city"
             className="inputField"
             value={search}
             onChange={(event) => {
