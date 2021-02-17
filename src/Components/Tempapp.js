@@ -3,7 +3,7 @@ import "./css/style.css";
 
 const Tempapp = () => {
   const [city, setcity] = useState("");
-  const [search, setsearch] = useState("Mumbai");
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -22,6 +22,7 @@ const Tempapp = () => {
         <div className="inputData">
           <input
             type="search"
+            placeholder="Enter city name"
             className="inputField"
             value={search}
             onChange={(event) => {
@@ -30,7 +31,7 @@ const Tempapp = () => {
           />
         </div>
         {!city ? (
-          <p className="errorMsg">No data found</p>
+          <p className="errorMsg">No such city found</p>
         ) : (
           <div>
             <div className="info">
