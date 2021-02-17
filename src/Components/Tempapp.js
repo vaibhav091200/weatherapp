@@ -12,6 +12,7 @@ const Tempapp = () => {
       const resJson = await response.json();
       setcity(resJson.main);
     };
+
     fetchApi();
   }, [search]);
 
