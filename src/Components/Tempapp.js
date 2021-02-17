@@ -3,39 +3,13 @@ import "./css/style.css";
 
 const Tempapp = () => {
   const [city, setcity] = useState("");
-  const [lat, setlat] = useState("");
-  const [lon, setlon] = useState("");
   const [search, setsearch] = useState("Mumbai");
-  const showposition = (position) => {
-    setlat(position.coords.latitude);
-    setlon(position.coords.longitude);
-  };
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showposition);
-
-    const fun = () => {
-      const u = `https://us1.locationiq.com/v1/reverse.php?key=pk.0ea17ec4a9506ee3eb01af9338314742&lat=${lat}&lon=${lon}&format=json`;
-      const res = await fetch(u);
-      const c = await res.json();
-      if (c.address) {
-        console.log(c.address.state);
-        setsearch(c.address.state);
-      }
-    };
-    fun();
-  }
-
-  //   const r = await fetch(u);
 
   useEffect(() => {
     const fetchApi = async () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fbcd14697856476288cce483ecbba02f`;
       const response = await fetch(url);
-      //   console.log(response);
       const resJson = await response.json();
-      //   console.log(resJson);
-      //   console.log(resJson.name);
-      //   console.log(resJson.main.temp_max);
       setcity(resJson.main);
     };
     fetchApi();
