@@ -13,7 +13,7 @@ const Tempapp = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showposition);
 
-    const fun = async () => {
+    const fun = () => {
       const u = `https://us1.locationiq.com/v1/reverse.php?key=pk.0ea17ec4a9506ee3eb01af9338314742&lat=${lat}&lon=${lon}&format=json`;
       const res = await fetch(u);
       const c = await res.json();
